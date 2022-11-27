@@ -1,0 +1,38 @@
+body{
+	background-color: #38CFB6 ;
+}
+.cabecera{
+	font-family: fantasy;
+	font-size: 30px;
+	text-align: center;
+	border: solid black ;
+	background: white;
+
+}
+.cabecera img{
+	position: absolute;
+	width: 10%;
+	left: 1000px;
+	top: 15px;
+}
+.info{
+	background: white;
+	border: solid green 2px;
+	border-radius: 10px;
+	font-family: arial;
+}
+.info img{
+	width: 20%;
+	height: auto;
+}
+button{
+	border: solid green 1px;
+	border-radius: 5px;
+	background: white;
+}
+footer{
+	border: solid black 2px;
+	border-radius: 10px;
+	background: white;
+	font-family: arial;
+}

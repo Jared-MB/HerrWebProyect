@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+nav a::before {
+	content: "";
+	position: absolute;
+	bottom: -2px;
+	left: 0;
+	width: 0;
+	height: 2px;
+	background-color: #7e22ce;
+	transition: width 400ms;
+}
+
+nav a:hover::before {
+	width: 100%;
+}
