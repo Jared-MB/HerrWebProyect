@@ -2,9 +2,11 @@ lockfileVersion: 5.4
 
 specifiers:
   tailwindcss: ^3.2.4
+  typescript: ^4.9.3
 
 devDependencies:
   tailwindcss: 3.2.4
+  typescript: 4.9.3
 
 packages:
 
@@ -426,6 +428,12 @@ packages:
     engines: {node: '>=8.0'}
     dependencies:
       is-number: 7.0.0
+    dev: true
+
+  /typescript/4.9.3:
+    resolution: {integrity: sha512-CIfGzTelbKNEnLpLdGFgdyKhG23CKdKgQPOBc+OUNrkJ2vr+KSzsSV5kq5iWhEQbok+quxgGzrAtGWCyU7tHnA==}
+    engines: {node: '>=4.2.0'}
+    hasBin: true
     dev: true
 
   /util-deprecate/1.0.2:
