@@ -17,3 +17,13 @@ nav a::before {
 nav a:hover::before {
 	width: 100%;
 }
+
+.pais{
+	position: relative;
+	width: 20%;
+	padding: 10px; 
+	box-shadow: gray 0 0 10px;
+	float: left;
+	margin: 10px;
+
+}
