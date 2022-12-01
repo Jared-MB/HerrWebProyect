@@ -35,19 +35,32 @@
 				</ul>
 			</nav>
 		</header>
-		<section class="min-h-[calc(100vh-160px)] lg:min-h-[calc(100vh-60px)] m-12 lg:m-8 relative top-40 lg:top-[60px] flex flex-wrap gap-12" id="champions-container">
-		<!-- 
-			CONTENT
-		-->
+		<section class="min-h-[calc(100vh-160px)] lg:min-h-[calc(100vh-60px)] m-12 lg:m-8 relative top-40 lg:top-[60px] flex flex-col gap-12">
+			<form class="basis-full border-b border-bgray-400 pb-4 flex items-center justify-between">
+				<h2 class="text-6xl lg:text-4xl text-purple-500 mb-4">
+					PAÍSES CAMPEONES
+				</h2>
+				<div>
+					<input placeholder='Buscar...' type="text" class='p-1 outline-none border-b focus:border-b duration-200 focus:border-b-purple-500'/>
+					<button type="submit">
+						<i class="fa-solid fa-magnifying-glass text-purple-500 hover:scale-105 duration-200"></i>
+					</button>
+				</div>
+			</form>
+			<article id="champions-container" class=" flex flex-wrap gap-12">
+				<!-- 
+					CONTENT
+				-->
+			</article>
 		</section> 
 		<footer class="border-t-4 lg:border-t border-t-gray-400 lg:border-t-gray-300 mx-12 flex justify-between items-center py-12 lg:py-4 text-gray-500 relative top-36 lg:top-[60px]">
-			<small class="text-3xl lg:text-base">Hugo xd</small>
-			<h6 class="text-4xl lg:text-base">Herramientas Web</h6>
-			<small class="text-3xl lg:text-base">Yo xd</small>
+			<small class="text-2xl lg:text-base text-center">MENDOZA SAINZ VICTOR HUGO</small>
+			<h6 class="text-3xl lg:text-base text-center">HERRAMIENTAS WEB</h6>
+			<small class="text-2xl lg:text-base text-center">MUÑOZ BAEZ ANGEL JARED</small>
 		</footer>
 	</main>
 	<template id="champion-card-template">
-		<div class="border border-purple-500 rounded-lg basis-2/3 lg:basis-[20%] grow h-[460px] lg:h-64">
+		<div class="shadow-md rounded-lg basis-2/3 lg:basis-[20%] grow h-[460px] lg:h-64">
 			<img class="photo w-full h-[75%] object-cover object-center rounded-[8px_8px_0_0]">
 			<div class="info flex items-center justify-center gap-8 h-[25%]">
 				<img class="lg:w-20 lg:h-12 w-24 h-16  object-fill">

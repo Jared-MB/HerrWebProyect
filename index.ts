@@ -62,14 +62,49 @@ if (window.location.pathname.includes('champions')){
 	const template = (document.getElementById('champion-card-template') as HTMLTemplateElement).content
 	const fragment = document.createDocumentFragment()
 
-	champions.forEach(champion => {
-		(template.querySelector('.photo') as HTMLImageElement).setAttribute('src', champion.img)
-		const info = template.querySelector('.info') as HTMLElement
-		(info.querySelector('img') as HTMLImageElement).setAttribute('src', champion.flag);
-		(info.querySelector('span') as HTMLSpanElement).textContent = champion.text
-		const clone = template.cloneNode(true) as Node
-		fragment.appendChild(clone)
-	})
+	const generateCards = (championsParam: Champion[], fragmentParam: DocumentFragment) => {
+		championsParam.forEach(champion => {
+			(template.querySelector('.photo') as HTMLImageElement).setAttribute('src', champion.img)
+			const info = template.querySelector('.info') as HTMLElement
+			(info.querySelector('img') as HTMLImageElement).setAttribute('src', champion.flag);
+			(info.querySelector('span') as HTMLSpanElement).textContent = champion.text
+			const clone = template.cloneNode(true) as Node
+			fragmentParam.appendChild(clone)
+		})
+	}
+
+	generateCards(champions, fragment)
 
 	championsContainer.appendChild(fragment)
+
+	const search = (value: string | undefined) => {
+		if (value){
+			championsContainer.innerHTML = ''
+			const filteredChampions = champions.filter(champion => champion.text.toLowerCase().includes(value.toLowerCase()))
+			const championsFragment = document.createDocumentFragment()
+			generateCards(filteredChampions, championsFragment)
+			championsContainer.appendChild(championsFragment)
+		} else {
+			championsContainer.innerHTML = ''
+			const championsFragment = document.createDocumentFragment()
+			generateCards(champions, championsFragment)
+			championsContainer.appendChild(championsFragment)
+		}
+	}
+
+	const form = document.querySelector('form') as HTMLFormElement
+
+	form.addEventListener("submit", (e) => {
+		e.preventDefault()
+		const value = (e.target as HTMLFormElement).querySelector('input')?.value
+		search(value)
+	})
+
+	const input = document.querySelector('input') as HTMLInputElement
+
+	input.addEventListener('keyup', (e) => {
+		const value = (e.target as HTMLInputElement).value
+		search(value)
+	})
+
 }

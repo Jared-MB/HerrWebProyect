@@ -50,13 +50,43 @@ if (window.location.pathname.includes('champions')) {
     const championsContainer = document.getElementById('champions-container');
     const template = document.getElementById('champion-card-template').content;
     const fragment = document.createDocumentFragment();
-    champions.forEach(champion => {
-        template.querySelector('.photo').setAttribute('src', champion.img);
-        const info = template.querySelector('.info');
-        info.querySelector('img').setAttribute('src', champion.flag);
-        info.querySelector('span').textContent = champion.text;
-        const clone = template.cloneNode(true);
-        fragment.appendChild(clone);
-    });
+    const generateCards = (championsParam, fragmentParam) => {
+        championsParam.forEach(champion => {
+            template.querySelector('.photo').setAttribute('src', champion.img);
+            const info = template.querySelector('.info');
+            info.querySelector('img').setAttribute('src', champion.flag);
+            info.querySelector('span').textContent = champion.text;
+            const clone = template.cloneNode(true);
+            fragmentParam.appendChild(clone);
+        });
+    };
+    generateCards(champions, fragment);
     championsContainer.appendChild(fragment);
+    const search = (value) => {
+        if (value) {
+            championsContainer.innerHTML = '';
+            const filteredChampions = champions.filter(champion => champion.text.toLowerCase().includes(value.toLowerCase()));
+            const championsFragment = document.createDocumentFragment();
+            generateCards(filteredChampions, championsFragment);
+            championsContainer.appendChild(championsFragment);
+        }
+        else {
+            championsContainer.innerHTML = '';
+            const championsFragment = document.createDocumentFragment();
+            generateCards(champions, championsFragment);
+            championsContainer.appendChild(championsFragment);
+        }
+    };
+    const form = document.querySelector('form');
+    form.addEventListener("submit", (e) => {
+        var _a;
+        e.preventDefault();
+        const value = (_a = e.target.querySelector('input')) === null || _a === void 0 ? void 0 : _a.value;
+        search(value);
+    });
+    const input = document.querySelector('input');
+    input.addEventListener('keyup', (e) => {
+        const value = e.target.value;
+        search(value);
+    });
 }
