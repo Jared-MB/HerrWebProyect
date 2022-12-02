@@ -45,6 +45,54 @@ if (window.location.pathname.includes('champions')) {
             img: 'img/BRASIL70.jpg',
             text: 'Brasil - 1970',
             flag: 'img/brasil.png'
+        }, {
+            img: 'img/alemania74.jpg',
+            text: 'Alemania-1974',
+            flag: 'img/alemania-b.png'
+        }, {
+            img: 'img/argentina78.jpg',
+            text: 'Argentina-1978',
+            flag: 'img/argentina.png'
+        }, {
+            img: 'img/italia82.jpg',
+            text: 'Italia-1982',
+            flag: 'img/italia-b.png'
+        }, {
+            img: 'img/argentina86.jpg',
+            text: 'Argentina-1986',
+            flag: 'img/argentina.png'
+        }, {
+            img: 'img/alemania90.jpg',
+            text: 'Alemania-1990',
+            flag: 'img/alemania-b.png'
+        }, {
+            img: 'img/brasil94.jpg',
+            text: 'Brasil-1994',
+            flag: 'img/brasil.png'
+        }, {
+            img: 'img/francia98.jpg',
+            text: 'Francia-1998',
+            flag: 'img/francia.png'
+        }, {
+            img: 'img/brasil2.jpg',
+            text: 'Brasil-2002',
+            flag: 'img/brasil.png'
+        }, {
+            img: 'img/italia6.jpg',
+            text: 'Italia-2006',
+            flag: 'img/italia-b.png'
+        }, {
+            img: 'img/españa10.jpg',
+            text: 'España-2010',
+            flag: 'img/españa.png'
+        }, {
+            img: 'img/alemania14.jpg',
+            text: 'Alemania-2014',
+            flag: 'img/alemania-b.png'
+        }, {
+            img: 'img/francia18.jpg',
+            text: 'Francia-2018',
+            flag: 'img/francia.png'
         }
     ];
     const championsContainer = document.getElementById('champions-container');
